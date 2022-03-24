@@ -9,7 +9,7 @@ class Cuenta:
         self.saldo = saldo
         self.modo = modo
 
-    def retiro(self):
+    def retirar(self):
         dretirado = int(input("Ha seleccionado usted la opción de retirar dinero de su cuenta.\n ¿Cuánto dinero desea retirar?:\n"))
         if 0 < dretirado <= self.saldo:
             self.saldo = self.saldo - dretirado
@@ -22,4 +22,4 @@ class Cuenta:
 
         else:
             print("Usted no puede retirar más dinero del que contiene el saldo de su cuenta, por favor, introduzca correctamente la cantidad a retirar de su cuenta.")
-            Cuenta.retiro(A)
+            Cuenta.retirar(A)
