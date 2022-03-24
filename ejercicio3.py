@@ -33,3 +33,30 @@ class Cuenta:
             operacion()
         else:
             exit()
+
+    def transferencia(self):
+        if A.modo != 1:    
+            dtransferido = int(input("Ha seleccionado la opción de transferir dinero a otra cuenta. ¿Cuánto desea transferir?: "))
+            if 0 < dtransferido <= self.saldo*2:    
+                A.saldo -= dtransferido
+                B.saldo += dtransferido
+                print("Ha transferido " + str(dtransferido) + "€ y su saldo es de " + str(self.saldo) + "€.")
+                print("El saldo de la cuenta B es de " + str(B.saldo) + "€.")
+            decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
+            if decision == 1:
+                operacion()
+            else:
+                exit()
+        else:
+            dtransferido = int(input("Ha seleccionado la opción de transferir dinero a otra cuenta. ¿Cuánto dinero desea transferir?: "))
+
+            if 0 < (dtransferido + dtransferido * 0.05) <= self.saldo:        
+                A.saldo -= dtransferido + dtransferido * 0.05
+                B.saldo += dtransferido #cuenta a transferir
+                print("a transferido " + str(dtransferido) + "€ y su saldo es de " + str(self.saldo) + "€.")
+                print("El saldo de la cuenta B es de " + str(B.saldo) + "€.")
+                decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
+                if decision == 1:
+                    operacion()
+                else:
+                    exit()
