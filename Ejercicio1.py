@@ -3,8 +3,8 @@ class libro:
         self.titulo = str(titulo)
         self.genero = str(genero)
         self.autor = str(autor)
-        self.isbn = bool(isbn)
-        self.editorial = bool(editorial)
+        self.isbn = int(isbn)
+        self.editorial = str(editorial)
 
     def get_titulo(self):
         return self.titulo
@@ -35,3 +35,5 @@ class libro:
 
     def set_titulo(self, editorial):
         self.editorial = editorial
+
+libro = libro("Oda a enamorados", "Romace", "Pepe", 135672, "Santillana")
