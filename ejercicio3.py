@@ -13,7 +13,7 @@ class Cuenta:
         dretirado = int(input("Ha seleccionado usted la opción de retirar dinero de su cuenta.\n ¿Cuánto dinero desea retirar?:\n"))
         if 0 < dretirado <= self.saldo:
             self.saldo = self.saldo - dretirado
-            print("Ha retirado " + str(dretirado) + "€ y su saldo actualmente es de " + str(self.saldo) + "€.")
+            print("Ha retirado " + str(dretirado) + "€ y su saldo es de " + str(self.saldo) + "€.")
             decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
             if decision == 1:
                 operacion()
@@ -23,3 +23,13 @@ class Cuenta:
         else:
             print("Usted no puede retirar más dinero del que contiene el saldo de su cuenta, por favor, introduzca correctamente la cantidad a retirar de su cuenta.")
             Cuenta.retirar(A)
+
+    def ingresar(self):
+        dingresado = int(input("Ha seleccionado la opción de ingresar dinero a su cuenta. ¿Cuánto dinero desea ingresar?"))
+        self.saldo += dingresado
+        print("Ha ingresado " + str(dingresado) + "€ y su saldo es de " + str(self.saldo) + "€.")
+        decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
+        if decision == 1:
+            operacion()
+        else:
+            exit()
