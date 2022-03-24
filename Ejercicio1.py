@@ -1,9 +1,9 @@
 class libro:
-    def __init__(self, titulo, genero, autor, ISB, editorial):
+    def __init__(self, titulo, genero, autor, isbn, editorial):
         self.titulo = str(titulo)
         self.genero = str(genero)
         self.autor = str(autor)
-        self.isb = bool(ISB)
+        self.isbn = bool(isbn)
         self.editorial = bool(editorial)
 
     def get_titulo(self):
@@ -16,7 +16,7 @@ class libro:
         return self.autor
 
     def get_isb(self):
-        return self.isb
+        return self.isbn
 
     def get_editorial(self):
         return self.editorial
@@ -30,8 +30,8 @@ class libro:
     def set_autor(self, autor):
         self.titulo = autor
 
-    def set_titulo(self, isb):
-        self.isb = isb
+    def set_titulo(self, isbn):
+        self.isbn = isbn
 
     def set_titulo(self, editorial):
         self.editorial = editorial
