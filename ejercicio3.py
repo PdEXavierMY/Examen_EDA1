@@ -45,12 +45,16 @@ class Cuenta:
 
     def ingresar(self):
         dingresado = int(input("Ha seleccionado la opción de ingresar dinero a su cuenta. ¿Cuánto dinero desea ingresar?: "))
-        self.saldo += dingresado
-        print("Ha ingresado " + str(dingresado) + "€ y su saldo es de " + str(self.saldo) + "€.")
-        decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
-        if decision == 1:
-            Cuenta.operacion()
+        if dingresado > 0:
+            self.saldo += dingresado
+            print("Ha ingresado " + str(dingresado) + "€ y su saldo es de " + str(self.saldo) + "€.")
+            decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
+            if decision == 1:
+                Cuenta.operacion()
+            else:
+                exit()
         else:
+            print("No puede ingresar números negativos.")
             exit()
 
     def transferencia(self):
@@ -102,5 +106,6 @@ class Cuenta:
         if elegir == 3:
             Cuenta.transferencia(A)
 
+#iniciar código
 Cuenta.creacioncuenta()
 Cuenta.operacion()
