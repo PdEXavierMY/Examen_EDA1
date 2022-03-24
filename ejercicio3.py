@@ -60,3 +60,13 @@ class Cuenta:
                     operacion()
                 else:
                     exit()
+
+    def creacioncuenta():
+            nombre = str(input("Ha seleccionado la opción de crear una cuenta. Introduzca su nombre: "))
+            global A, B
+            modo = int(input("¿Qué tipo de cuenta desea(Plazo fijo = 1, VIP = 2)?: "))
+            n = str(random.randint(100000000000, 999999999999))
+            A = Cuenta(str(random.randint(100000, 999999)), nombre, datetime.today(),n, 10000, modo)
+            print(nombre + " ha creado una cuenta bancaria el " + str(datetime.today()) + " con el número de cuenta: " + n)
+            B = Cuenta(str(random.randint(100000, 999999)), "Persona B", datetime.today(), str(random.randint(100000000000, 999999999999)), 10000, 5)
+            print("la cuenta B(VIP) a nombre de Professor.X, con un saldo de 1000 euros, con la que va a operar se creó el 17/07/2017.")
