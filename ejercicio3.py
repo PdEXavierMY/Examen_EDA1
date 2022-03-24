@@ -10,7 +10,7 @@ class Cuenta:
         self.modo = modo
 
     def retirar(self):
-        dretirado = int(input("Ha seleccionado usted la opción de retirar dinero de su cuenta.\n ¿Cuánto dinero desea retirar?:\n"))
+        dretirado = int(input("Ha seleccionado usted la opción de retirar dinero de su cuenta.\n¿Cuánto dinero desea retirar?: "))
         if 0 < dretirado <= self.saldo:
             self.saldo = self.saldo - dretirado
             print("Ha retirado " + str(dretirado) + "€ y su saldo es de " + str(self.saldo) + "€.")
@@ -25,7 +25,7 @@ class Cuenta:
             Cuenta.retirar(A)
 
     def ingresar(self):
-        dingresado = int(input("Ha seleccionado la opción de ingresar dinero a su cuenta. ¿Cuánto dinero desea ingresar?"))
+        dingresado = int(input("Ha seleccionado la opción de ingresar dinero a su cuenta. ¿Cuánto dinero desea ingresar?: "))
         self.saldo += dingresado
         print("Ha ingresado " + str(dingresado) + "€ y su saldo es de " + str(self.saldo) + "€.")
         decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
@@ -67,9 +67,9 @@ class Cuenta:
             modo = int(input("¿Qué tipo de cuenta desea(Plazo fijo = 1, VIP = 2)?: "))
             n = str(random.randint(100000000000, 999999999999))
             A = Cuenta(str(random.randint(100000, 999999)), nombre, datetime.today(),n, 10000, modo)
-            print(nombre + " ha creado una cuenta bancaria el " + str(datetime.today()) + " con el número de cuenta: " + n)
+            print(nombre + " ha creado una cuenta bancaria el " + str(datetime.today()) + " con el número de cuenta: " + n + ".")
             B = Cuenta(str(random.randint(100000, 999999)), "Persona B", datetime.today(), str(random.randint(100000000000, 999999999999)), 10000, 5)
-            print("la cuenta B(VIP) a nombre de Professor.X, con un saldo de 1000 euros, con la que va a operar se creó el 17/07/2017.")
+            print("La segunda cuenta B(VIP) con un saldo de 1000 euros con la que va a operar se creó por defecto el 17/07/2017.")
 
     def operacion():
         elegir = int(input("Introduzca la operación que va a realizar(Ingersar dinero = 1, Retirar dinero = 2, Transferir dinero = 3): "))
@@ -79,3 +79,6 @@ class Cuenta:
             Cuenta.retirar(A)
         if elegir == 3:
             Cuenta.transferencia(A)
+
+Cuenta.creacioncuenta()
+Cuenta.operacion()
