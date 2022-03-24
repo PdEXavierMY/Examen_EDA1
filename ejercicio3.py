@@ -16,12 +16,12 @@ class Cuenta:
             print("Ha retirado " + str(dretirado) + "€ y su saldo es de " + str(self.saldo) + "€.")
             decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
             if decision == 1:
-                operacion()
+                Cuenta.operacion()
             else:
                 exit()
 
         else:
-            print("Usted no puede retirar más dinero del que contiene el saldo de su cuenta, por favor, introduzca correctamente la cantidad a retirar de su cuenta.")
+            print("No puede retirar más dinero del que contiene el saldo, por favor, introduzca correctamente la cantidad a retirar.")
             Cuenta.retirar(A)
 
     def ingresar(self):
@@ -30,7 +30,7 @@ class Cuenta:
         print("Ha ingresado " + str(dingresado) + "€ y su saldo es de " + str(self.saldo) + "€.")
         decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
         if decision == 1:
-            operacion()
+            Cuenta.operacion()
         else:
             exit()
 
@@ -44,7 +44,7 @@ class Cuenta:
                 print("El saldo de la cuenta B es de " + str(B.saldo) + "€.")
             decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
             if decision == 1:
-                operacion()
+                Cuenta.operacion()
             else:
                 exit()
         else:
@@ -57,7 +57,7 @@ class Cuenta:
                 print("El saldo de la cuenta B es de " + str(B.saldo) + "€.")
                 decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
                 if decision == 1:
-                    operacion()
+                    Cuenta.operacion()
                 else:
                     exit()
 
@@ -70,3 +70,12 @@ class Cuenta:
             print(nombre + " ha creado una cuenta bancaria el " + str(datetime.today()) + " con el número de cuenta: " + n)
             B = Cuenta(str(random.randint(100000, 999999)), "Persona B", datetime.today(), str(random.randint(100000000000, 999999999999)), 10000, 5)
             print("la cuenta B(VIP) a nombre de Professor.X, con un saldo de 1000 euros, con la que va a operar se creó el 17/07/2017.")
+
+    def operacion():
+        elegir = int(input("Introduzca la operación que va a realizar(Ingersar dinero = 1, Retirar dinero = 2, Transferir dinero = 3): "))
+        if elegir == 1:
+            Cuenta.ingresar(A)
+        if elegir == 2:
+            Cuenta.retirar(A)
+        if elegir == 3:
+            Cuenta.transferencia(A)
