@@ -21,4 +21,7 @@ class mamifero:
 
 Pollo = oviparo("Phasianidae", "Asia")
 Gato = mamifero("Felidae", "Mundo")
-#Ornitorrinco = mamifero y oviparo 
+class Ornitorrinco: #hereda tanto de oviparo como de mamifero(ver UML)
+     def __init__(self, familia, origen):
+         oviparo.__init__(self, familia, origen)
+         mamifero.__init__(self, familia, origen)
