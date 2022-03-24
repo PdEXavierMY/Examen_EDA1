@@ -67,6 +67,7 @@ class Cuenta:
                 print("El saldo de la cuenta B es de " + str(B.saldo) + "€.")
             else:
                 print("No posee esa cantidad de dinero en su cuenta. Operación denegada.")
+                exit()
             decision = int(input("¿Desea continuar realizando operaciones?(Sí = 1): "))
             if decision == 1:
                 Cuenta.operacion()
@@ -86,6 +87,7 @@ class Cuenta:
                     exit()
             else:
                 print("No posee esa cantidad de dinero en su cuenta. Operación denegada.")
+                exit()
 
     def creacioncuenta():
             nombre = str(input("Ha seleccionado la opción de crear una cuenta. Introduzca su nombre: "))
